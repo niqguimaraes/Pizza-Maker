@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pizza Maker Delivery</title>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Normalize CSS -->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+	<!-- Estilo customizado -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Estilo carrossel -->
+	<link rel="stylesheet" type="text/css" href="css/jcarousel.data-attributes.css">
+
+	<!-- Fontawesome -->
+	<link href="css/fontawesome/css/fontawesome.css" rel="stylesheet">
+  	<link href="css/fontawesome/css/brands.css" rel="stylesheet">
+  	<link href="css/fontawesome/css/solid.css" rel="stylesheet">
+
+
+  	<script type="text/javascript">
+  		window.onscroll = function() {scrollFunction()};
+
+      window.requestAnimFrame = (function(){
+        return  window.requestAnimationFrame       ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame    ||
+                function( callback ){
+                  window.setTimeout(callback, 1000 / 60);
+                };
+      })();
+
+      function scrollToY(scrollTargetY, speed, easing) {
+          // scrollTargetY: the target scrollY property of the window
+          // speed: time in pixels per second
+          // easing: easing equation to use
+
+          var scrollY = window.scrollY || document.documentElement.scrollTop,
+              scrollTargetY = scrollTargetY || 0,
+              speed = speed || 2000,
+              easing = easing || 'easeOutSine',
+              currentTime = 0;
+
+          // min time .1, max time .8 seconds
+          var time = Math.max(.1, Math.min(Math.abs(scrollY - scrollTargetY) / speed, .8));
+
+          // easing equations from https://github.com/danro/easing-js/blob/master/easing.js
+          var easingEquations = {
+                  easeOutSine: function (pos) {
+                      return Math.sin(pos * (Math.PI / 2));
+                  },
+                  easeInOutSine: function (pos) {
+                      return (-0.5 * (Math.cos(Math.PI * pos) - 1));
+                  },
+                  easeInOutQuint: function (pos) {
+                      if ((pos /= 0.5) < 1) {
+                          return 0.5 * Math.pow(pos, 5);
+                      }
+                      return 0.5 * (Math.pow((pos - 2), 5) + 2);
+                  }
+              };
+
+          // add animation loop
+          function tick() {
+              currentTime += 1 / 60;
+
+              var p = currentTime / time;
+              var t = easingEquations[easing](p);
+
+              if (p < 1) {
+                  requestAnimFrame(tick);
+
+                  window.scrollTo(0, scrollY + ((scrollTargetY - scrollY) * t));
+              } else {
+                  window.scrollTo(0, scrollTargetY);
+              }
+          }
+
+          // call it once to get started
+          tick();
+      }
+
+      function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              document.getElementById("myBtn").style.display = "block";
+          } else {
+              document.getElementById("myBtn").style.display = "none";
+          }
+      }
+  	</script>
+
+</head>
+
+<body>
+
+
+<a href="#menu" onclick="scrollToY(0, 10000, 'easeInOutSine');" id="myBtn" title="Ir ao topo">
+      <img src="img/gotop.png" class="img-fluid">
+    </a>
+
+
+
+<!-- SITE A PARTIR DAQUI -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+		<button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navegacao">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+		<div class="collapse navbar-collapse" id="navegacao">
+			<ul class="navbar-nav">
+			  <li class="nav-item">
+			    <a id="pedido" class="rounded shadow-sm nav-link text-uppercase text-center" href="https://deliveryapp.neemo.com.br/delivery/2571">Faça seu pedido</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#mais-pedidas">Mais pedidas</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#localizacao">Localização</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#contato">Contato</a>
+			  </li>
+			</ul>
+		</div>
+	</nav>
+
+	<section>
+		<div id="carousel" class="carousel slide shadow" data-ride="carousel">
+          <div class="carousel-inner" style="max-height: 28rem;">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="img/img_topo.png" alt="Primeiro Slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="img/img_topo.png" alt="Segundo Slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="img/img_topo.png" alt="Terceiro Slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="img/img_topo.png" alt="Terceiro Slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="img/img_topo.png" alt="Terceiro Slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+          </a>
+        </div>
+	</section>
+
+	<section id="bemvindo" class="clearfix pt-5 pt-lg-0">
+		<h1 class="titulos text-justify text_bemvindo">Seja bem vindo</h1>
+		<div class="text_bemvindo text-justify"> A pizza atravessou o Atlântico, conquistou São Paulo e os nossos corações. Na A Pizzaria queremos que você tenha a melhor experiência ao apreciar todo o sabor de uma verdadeira pizza. Tradição e qualidade que se iniciam desde a escolha minuciosa dos ingredientes, incluindo o preparo artesanal da massa e ambiente para família e amigos.</div>
+	</section>
+
+	<section id="diferenciais" class="container-fluid d-none d-md-block">
+		<div class="row container">
+			<div class="col-3 text-center">
+				<img class="img_diferenciais img-fluid" src="img/ingredientes_selecionados.png">
+				<div class="texto_diferenciais text-black-50 text-center">Ingredientes de qualidade, selecionados e sempre frescos</div>
+			</div>
+			<div class="col-3 text-center">
+				<img class="img_diferenciais img-fluid" src="img/delivery_rapido.png">
+				<div class="texto_diferenciais text-black-50 text-center">Entrega rápida e garantia de uma pizza sempre quentinha</div>
+			</div>
+			<div class="col-3 text-center">
+				<img class="img_diferenciais img-fluid" src="img/atendimento.png">
+				<div class="texto_diferenciais text-black-50 text-center">O melhor atendimento com a atenção que você merece</div>
+			</div>
+			<div class="col-3 text-center">
+				<img class="img_diferenciais img-fluid" src="img/paixao_pizza.png">
+				<div class="texto_diferenciais text-black-50 text-center">Pizzas tradicionais, Integrais, Veganas, Sem lactose e Sem glúten</div>
+			</div>
+		</div>
+	</section>
+	<section id="mais-pedidas" class="container-fluid bg-light mb-4 mt-3">
+		<div class="container pb-3 pt-2">
+			<div class="display-4 text-left mb-3">Mais pedidas</div>
+		    <div class="card-columns">
+				<div class="card">
+					<img src="img/carrossel/1.jpg" class="card-img-top">
+					<div class="card-body">
+						<h4 class="card-title">Margherita</h4>
+						<p class="card-subtitle text-justify">Molho de tomate da casa, Mussarela, Tomates fatiados, Parmesão, finalizada com manjericão, azeitonas e orégano</p>
+					</div>
+				</div>
+				<div class="card">
+					<img src="img/carrossel/2.jpg" class="card-img-top">
+					<div class="card-body">
+						<h4 class="card-title">Frango com Catupiry</h4>
+						<p class="card-subtitle text-justify">Molho de tomate da casa, Mussarela, Frango desfiado, Catupiry original, azeitonas e orégano</p>
+					</div>
+				</div>
+				<div class="card">
+					<img src="img/carrossel/3.jpg" class="card-img-top">
+					<div class="card-body">
+						<h4 class="card-title">Chocolate Misto</h4>
+						<p class="card-subtitle text-justify">Massa super crocante, chocolate ao leite derretido e chocolate branco para finalizar</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section id="localizacao" class="container-fluid mb-4">
+		<div class="container pb-3 pt-2">
+			<div class="display-4 text-left mb-3">Localização</div>
+			<iframe class="mt-3 rounded shadow" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.042117746639!2d-45.899183748641825!3d-23.205135654346147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4bfb2bbf0ed5%3A0xaf8a88ecd1aac10a!2sPizza%20Maker%20Delivery!5e0!3m2!1spt-BR!2sbr!4v1638561905355!5m2!1spt-BR!2sbr" style="border:0; width: 100%;" allowfullscreen="" loading="lazy"></iframe>
+		</div>
+	</section>
+
+	<footer id="contato">
+		<div id="rodape" class="mx-auto text-center container-fluid justify-content-between pt-3 pb-3">
+			<div class="container">
+				<form class="col mt-2">
+					<div class="display-4 mb-3 text-left">Contato</div>
+					<div class="form-group">
+					  <input type="text" class="form-control" placeholder="Nome">
+					</div>
+					<div class="form-group">
+					  <input type="text" class="form-control" placeholder="Assunto">
+					</div>
+					<div class="form-group">
+					  <textarea class="form-control" style="height: 8rem;" placeholder="Digite sua mensagem..."></textarea>
+					</div>
+					<button class="btn btn-dark btn-lg btn-block">Enviar</button>
+				</form>
+				<div class="col mt-3">
+					<a href="http://www.pizzamakerdelivery.com/" target="_blank"><img src="img/logo.png" class="img-responsive mx-auto d-block"></a>
+					<div class="pt-4">
+						<h5 class="d-inline">Pizza Maker Delivery</h5>
+						<div class="font-weight-light pt-2">Rua Casemiro de Abreu, 242 - Jd Maringá - São José dos Campos / SP</div>
+						<div class="font-weight-light">(12) 3308-6280</div>
+						<div class="font-weight-light">contato@pizzamakerdelivery.com</div>
+					</div>
+					<div class="pt-4">
+						<a href="http://www.facebook.com/pizzamakerdelivery"><img src="img/logo_facebook.png"></a>
+						<a href="http://www.instagram.com/pizzamakerdelivery"><img src="img/logo_instagram.png"></a>
+						<a href=""><img src="img/logo_whats.png"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.jcarousel.js"></script>
+    <script type="text/javascript" src="js/jcarousel.data-attributes.js"></script>
+
+</body>
+
+</html>
