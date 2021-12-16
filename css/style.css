@@ -1,1 +1,134 @@
+*{
+	margin: 0 auto;
+	padding: 0;
+}
 
+@font-face {
+  font-family: 'Blackened';
+  src: url('blackened.ttf') format('truetype');
+  font-size: 14px;
+}
+
+body{
+	/*background: url(../img/img_topo.png);
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: 100% 24rem; /*contain, cover;*/
+}
+
+#rodape{
+	width: 100%;
+	max-width: 63rem;
+	padding: 5px 0;
+}
+
+nav ul{
+	width: 100%;
+	font-family: Tahoma,Verdana,Segoe,sans-serif; 
+}
+
+nav ul li{
+	font-size:1.2rem;
+	letter-spacing: .2em
+}
+
+footer{
+	background: #000;
+	color: #FFF;
+	font-size: 0.9rem;
+}
+
+#bemvindo{
+	background-color: #7c1f14;
+	width: 100%;
+}
+
+#bemvindo h1, #bemvindo div{
+	margin: 0 auto;
+	max-width: 63rem;
+}
+
+#diferenciais{
+	max-width: 63rem;
+	width: 100%;
+	margin-top: 2rem;
+}
+
+#pedido{
+	padding: 5px 20px;
+	background: #d5af76;
+	color: #000;
+}
+
+#pedido:hover, #pedido a:hover{
+	color: #FFF;
+	background: #613900;
+	text-decoration: none;
+}
+
+.titulos{
+	font-family: 'Blackened';
+	font-size: 2rem;
+	margin-left: 5%;
+}
+
+.img_diferenciais{
+	width: 6em;
+}
+
+.texto_diferenciais{
+	margin: 1rem 0;
+	font-size: 0.9rem;
+}
+
+.text_bemvindo{
+	padding: 10px 30px 30px 30px;
+	color: #FFF;
+	margin: -0.1% 0 -0.1% 0;
+}
+
+.card-body{
+		min-height: 9.2rem;
+	}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	form{
+		margin-top: 2rem;
+	}
+	iframe{
+		height: 300px;
+	}
+	.display-4{
+		font-size: 2.9rem;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	iframe{
+		height: 600px;
+	}	
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+
+html{
+	scroll-behavior: smooth;    /* <----- THE SECRET ---- */
+}
+
+#myBtn {
+	display: none;
+	position: fixed;
+	bottom:1rem;
+	right:1rem;
+	width: 3rem;
+	z-index: 9999;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
